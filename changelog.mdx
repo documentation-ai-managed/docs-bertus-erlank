@@ -1,0 +1,134 @@
+---
+title: Changelog
+description: Review the version history of Bertus Erlank, including recent updates and improvements.
+---
+
+## Recent Updates
+
+Stay informed about the latest changes to Bertus Erlank. You can find detailed release notes below, organized by version. Each release includes new features, improvements, bug fixes, and any deprecation warnings.
+
+<Columns cols={3}>
+  <Card title="Latest: v1.2.0" icon="zap" href="#v120">
+    Enhanced performance and new collaboration tools.
+  </Card>
+  <Card title="v1.1.0" icon="package" href="#v110">
+    Dark mode and analytics improvements.
+  </Card>
+  <Card title="v1.0.0" icon="rocket" href="#v100">
+    Initial stable release with core functionality.
+  </Card>
+</Columns>
+
+<Callout kind="info">
+  Subscribe to our RSS feed at `https://docs.example.com/rss.xml` or follow `@bertus-erlank` on social platforms to get notified of new releases.
+</Callout>
+
+<Update label="2024-10-15" description="v1.2.0" tags={["feature", "improvement"]}>
+
+## New Features
+
+- Added real-time collaboration for shared documentation spaces.
+- Introduced customizable themes with your brand color `#3B82F6`.
+
+## Improvements
+
+- Optimized search performance by `>40%`.
+- Enhanced mobile responsiveness for better viewing on all devices.
+
+## Bug Fixes
+
+- Fixed rendering issues with nested `{code blocks}` in MDX files.
+- Resolved authentication errors during project imports.
+
+</Update>
+
+<Update label="2024-09-20" description="v1.1.0" tags={["feature", "bugfix"]}>
+
+## New Features
+
+- Dark mode support with automatic detection.
+- New analytics dashboard to track documentation views.
+
+## Bug Fixes
+
+- Corrected export functionality for PDF and Markdown formats.
+- Patched security vulnerability in webhook handling (CVE-2024-XXXX).
+
+<Callout kind="alert">
+  Deprecated legacy API endpoint `/v1/docs`. Migrate to `/v2/docs` immediately.
+</Callout>
+
+</Update>
+
+<Update label="2024-08-10" description="v1.0.0" tags={["breaking", "feature"]}>
+
+## Initial Release
+
+- Core documentation management with MDX support.
+- User authentication via `YOUR_API_KEY`.
+- Project organization and search capabilities.
+
+## Breaking Changes
+
+- Removed support for v0.x config format. Update your `{config.json}` files.
+
+</Update>
+
+## Upgrading Bertus Erlank
+
+Follow these steps to upgrade to the latest version. Always back up your projects first.
+
+<Steps>
+  <Step title="Check Current Version" icon="package">
+    Run the version check command in your terminal.
+    
+````bash
+npx bertus-erlank --version
+````
+  </Step>
+  <Step title="Upgrade Package" icon="download">
+    Use your preferred package manager.
+    
+    <CodeGroup tabs="npm,yarn,pnpm">
+````bash
+npm install bertus-erlank@latest
+````
+````bash
+yarn add bertus-erlank@latest
+````
+````bash
+pnpm add bertus-erlank@latest
+````
+    </CodeGroup>
+  </Step>
+  <Step title="Verify Installation" icon="check-circle">
+    Test the upgrade with a sample project.
+    
+````bash
+npx bertus-erlank init my-project
+cd my-project
+npx bertus-erlank dev
+````
+  </Step>
+</Steps>
+
+<Tabs>
+  <Tab title="Migration Guide" icon="book-open">
+    Review changes since your current version:
+    
+    | From Version | Key Changes | Migration Steps |
+    |--------------|-------------|-----------------|
+    | v1.0.x      | Dark mode, analytics | Update config schema |
+    | v1.1.x      | Real-time collab | Enable websocket in settings |
+  </Tab>
+  <Tab title="Troubleshooting" icon="help-circle">
+    Common issues and fixes:
+    
+    - **Upgrade fails**: Clear cache with `npm cache clean --force`.
+    - **Config errors**: Validate `{config.json}` against the new schema.
+  </Tab>
+</Tabs>
+
+<Expandable title="Full Version History" default-open="false">
+  For older releases, check the [GitHub releases page](https://github.com/bertus-erlank/bertus-erlank/releases).
+</Expandable>

@@ -1,0 +1,140 @@
+---
+title: Getting Started with Bertus Erlank
+description: Set up your account and create your first documentation space to begin managing projects right away.
+---
+
+## Prerequisites
+
+Before you begin, ensure you have the following:
+
+<Callout kind="info">
+
+- A modern web browser like Chrome, Firefox, or Safari
+- An email address for account verification
+- Optional: Node.js (v18+) if using the API for programmatic setup
+
+</Callout>
+
+## Create Your Account
+
+Sign up in minutes to access your documentation workspace.
+
+<Steps>
+  <Step title="Visit the Signup Page" icon="external-link">
+    Navigate to [https://bertuserlank.com/signup](https://bertuserlank.com/signup).
+  </Step>
+  <Step title="Enter Your Details">
+    Provide your email, name, and a strong password. Accept the terms of service.
+  </Step>
+  <Step title="Verify Email">
+    Check your inbox for a verification link from `no-reply@bertuserlank.com` and click it to activate your account.
+  </Step>
+  <Step title="Log In">
+    Return to the login page and sign in with your credentials.
+  </Step>
+</Steps>
+
+## Set Up Your First Project
+
+Create a documentation space to organize your project files.
+
+<Tabs>
+  <Tab title="Web UI" icon="globe">
+    After logging in, click **New Space** in the dashboard.
+
+    1. Enter a name like "My Project Docs".
+    2. Select a template (e.g., "Software Project").
+    3. Click **Create Space**.
+
+    Your space appears in the sidebar.
+  </Tab>
+  <Tab title="API" icon="code">
+    Use the API to create spaces programmatically.
+
+    <CodeGroup tabs="JavaScript,Python">
+      ````javascript
+      const response = await fetch('https://api.bertuserlank.com/v1/spaces', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${YOUR_API_KEY}`,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          name: 'My Project Docs',
+          template: 'software-project'
+        })
+      });
+      const space = await response.json();
+      console.log('Space ID:', space.id);
+      ````
+
+      ````python
+      import requests
+
+      response = requests.post(
+        'https://api.bertuserlank.com/v1/spaces',
+        headers={
+          'Authorization': f'Bearer {YOUR_API_KEY}',
+          'Content-Type': 'application/json'
+        },
+        json={
+          'name': 'My Project Docs',
+          'template': 'software-project'
+        }
+      )
+      space = response.json()
+      print('Space ID:', space['id'])
+      ````
+    </CodeGroup>
+  </Tab>
+</Tabs>
+
+<ParamField path="name" param-type="string" required="true">
+  Space name (max 100 characters).
+</ParamField>
+
+<ParamField header="Authorization" param-type="string" required="true">
+  Bearer token obtained from your account settings.
+</ParamField>
+
+## Upload Documents
+
+Add your first files to the space.
+
+<Steps>
+  <Step title="Drag and Drop" icon="upload">
+    Open your space and drag files like `README.md` or `api-spec.yaml` into the upload area.
+  </Step>
+  <Step title="API Upload">
+    ````bash
+    curl -X POST https://api.bertuserlank.com/v1/spaces/{SPACE_ID}/documents \
+      -H "Authorization: Bearer YOUR_API_KEY" \
+      -F "file=@/path/to/document.md"
+    ````
+  </Step>
+</Steps>
+
+## Basic Workspace Tour
+
+Explore key areas of your new space.
+
+<Columns cols={2}>
+  <Card title="Editor Panel" icon="edit-3" href="#editor">
+    Write and format Markdown documents with live preview.
+  </Card>
+  <Card title="File Tree" icon="git-branch" href="#files">
+    Navigate folders and manage document hierarchy.
+  </Card>
+  <Card title="Search" icon="search" href="#search">
+    Full-text search across all documents.
+  </Card>
+  <Card title="Settings" icon="settings" href="#settings">
+    Configure permissions and integrations.
+  </Card>
+</Columns>
+
+<Callout kind="tip">
+
+Ready to dive deeper? Check the [Authentication guide](/authentication) for API access and [full tour](/workspace-tour).
+
+</Callout>

@@ -1,0 +1,111 @@
+---
+title: Introduction to Bertus Erlank
+description: Welcome to Bertus Erlank, your default documentation space for organizing and managing project documentation efficiently.
+---
+
+## Overview
+
+Bertus Erlank provides a centralized space to organize, manage, and collaborate on your project documentation. You create structured pages, embed code examples, and maintain version history effortlessly. This platform supports Markdown, MDX components, and custom workflows tailored for developers and project managers.
+
+With Bertus Erlank, you streamline knowledge sharing across teams. Access searchable docs, integrate with GitHub, and export to various formats. Start building your documentation hub today.
+
+<Callout kind="info">
+  New to Bertus Erlank? Follow the quick start guide below to set up your first project in under 5 minutes.
+</Callout>
+
+## Key Features
+
+Bertus Erlank offers powerful tools to enhance your documentation workflow.
+
+<Columns cols={3}>
+  <Card title="MDX Components" icon="code" href="/components">
+    Use rich components like `<Steps>`, `<Tabs>`, and `<Cards>` for interactive docs.
+  </Card>
+  <Card title="Version Control" icon="git-branch" href="/version-control">
+    Track changes with Git integration and rollback to previous versions.
+  </Card>
+  <Card title="Search & Navigation" icon="search" href="/search">
+    Full-text search and sidebar navigation keep your content accessible.
+  </Card>
+</Columns>
+
+<Columns cols={2}>
+  <Card title="Collaboration" icon="users" href="/collaboration">
+    Share pages with teams and enable real-time editing.
+  </Card>
+  <Card title="Custom Themes" icon="palette" href="/themes">
+    Apply brand colors like `#3B82F6` for a personalized look.
+  </Card>
+</Columns>
+
+## Benefits for Project Management
+
+You gain efficiency by centralizing all project docs in one place. Reduce onboarding time for new team members with interactive guides using `<Steps>` and `<CodeGroup>`. Maintain up-to-date API references with `<ParamField>` components.
+
+Benefits include:
+- **Faster Onboarding**: Visual tutorials accelerate learning.
+- **Reduced Errors**: Consistent documentation prevents mistakes.
+- **Scalable Knowledge**: Grow your docs without losing organization.
+
+## Quick Start
+
+Get started with Bertus Erlank in minutes.
+
+<Steps>
+  <Step title="Create Account" icon="user-plus">
+    Sign up at `https://bertus-erlank.example.com/register` with your email.
+  </Step>
+  <Step title="New Workspace" icon="plus">
+    Click "New Workspace" and name it for your project, e.g., "MyApp Docs".
+  </Step>
+  <Step title="Add First Page" icon="file-plus">
+    Create `introduction.mdx` and add frontmatter:
+
+    ```yaml
+    ---
+    title: My Project
+    description: Overview of the project.
+    ---
+    ```
+
+    Then add content starting with `## Overview`.
+  </Step>
+  <Step title="Publish" icon="globe">
+    Save and publish. Share the live URL with your team.
+  </Step>
+</Steps>
+
+<CodeGroup tabs="JavaScript,Python">
+  ```javascript
+  // Example: Embed analytics
+  const trackPageView = (page) => {
+    fetch('https://api.example.com/track', {
+      method: 'POST',
+      body: JSON.stringify({ page })
+    });
+  };
+  ```
+  ```python
+  # Example: API integration
+  import requests
+  response = requests.post('https://api.example.com/track', json={'page': 'intro'})
+  ```
+</CodeGroup>
+
+## Quick Navigation
+
+<Columns cols={3}>
+  <Card title="Quickstart" icon="zap" href="/quickstart">
+    Set up your first workspace.
+  </Card>
+  <Card title="Authentication" icon="lock" href="/authentication">
+    Secure your docs.
+  </Card>
+  <Card title="Changelog" icon="git-commit" href="/changelog">
+    Latest updates.
+  </Card>
+</Columns>
+
+<Callout kind="tip">
+  Explore the sidebar for full navigation. Customize your space under Settings.
+</Callout>
